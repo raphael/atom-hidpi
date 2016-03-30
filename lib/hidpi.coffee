@@ -66,8 +66,8 @@ class Hidpi
     defaultScaleFactor = atom.config.get 'hidpi.defaultScaleFactor'
     reopenCurrentFile = atom.config.get 'hidpi.reopenCurrentFile'
 
-    adjustedScreenWidth = screen.width * osScaleFactor
-    adjustedScreenHeight = screen.height * osScaleFactor
+    adjustedScreenWidth = window.innerWidth * @currentScaleFactor
+    adjustedScreenHeight = window.innerHeight * @currentScaleFactor
     manualResolutionScaleFactor = manualResolutions[''+adjustedScreenWidth+'x'+adjustedScreenHeight]
     previousScaleFactor = @currentScaleFactor
     if manualResolutionScaleFactor
